@@ -19,7 +19,7 @@ if [ "$action" == "decrypt" ] && [ "$filename" != *.gpg ]; then
 fi
 
 case "$action" in
-	encrypt) gpg --symmetric $filename ;;
-	decrypt) gpg -o "${filename%.gpg}" --decrypt $filename ;;
+	encrypt) gpg --symmetric "$filename" ;;
+	decrypt) gpg -o "${filename%.gpg}" --decrypt "$filename" ;;
 	*) echo "Wrong argument"; exit 1 ;;
 esac
